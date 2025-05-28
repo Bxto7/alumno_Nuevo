@@ -14,8 +14,3 @@
   <a href="https://github.com/Lexus1688" target="_blank">Perfil de GitHub</a>
 </p>
 
-## <center>Descripción del Proyecto</center>
-
-<p align="justify">
-Este proyecto tiene como objetivo [inserta aquí una breve descripción del propósito del proyecto].
-</p>
