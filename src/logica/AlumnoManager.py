@@ -1,7 +1,7 @@
 from src.modelo.modelo import Alumno, Curso
 
 class AlumnoManager:
-    def _init_(self, session):
+    def __init__(self, session):
         self.session = session
 
     def crear_alumno(self, nombre):

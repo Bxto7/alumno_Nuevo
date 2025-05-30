@@ -1,16 +1,17 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-# Configurar base de datos SQLite en memoria para las pruebas
-# engine = create_engine('sqlite:///db.sqlite', echo=False)
-engine = create_engine('sqlite:///d:\\proyectos\\db.sqlite', echo=False)
-# engine = create_engine('sqlite:///', echo=True)
+# Crear carpeta "data" si no existe, para guardar el archivo db.sqlite de forma segura
+db_folder = os.path.join(os.getcwd(), "data")
+os.makedirs(db_folder, exist_ok=True)
+
+# Ruta del archivo de base de datos
+db_path = os.path.join(db_folder, "db.sqlite")
+
+# Crear motor con SQLite usando ruta segura
+engine = create_engine(f"sqlite:///{db_path}", echo=False)
+
+# Crear session y base declarativa
 Session = sessionmaker(bind=engine)
-
 Base = declarative_base()
-session = Session()
-
-# Crear la base de datos en memoria
-#engine = create_engine('sqlite:///:memory:')
-#Base.metadata.create_all(engine)
-#Session = sessionmaker(bind=engine)

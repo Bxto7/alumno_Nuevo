@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 from src.modelo.declarative_base import Base
 
 class Alumno(Base):
-    _tablename_ = 'alumnos'
+    __tablename__ = 'alumnos'
 
     id = Column(Integer, primary_key=True)
     nombre = Column(String, nullable=False)
@@ -11,7 +11,7 @@ class Alumno(Base):
 
 
 class Curso(Base):
-    _tablename_ = 'cursos'
+    __tablename__ = 'cursos'
 
     id = Column(Integer, primary_key=True)
     nombre = Column(String, nullable=False)
